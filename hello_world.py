@@ -34,3 +34,9 @@ tf.global_variables_initializer().run()
 for i in range(1000):
 	batch_xs, batch_ys = mnist.train.next_batch(100)
 	train_step.run({x: batch_xs, y_: batch_ys})
+
+# evaluate the accuracy
+correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+print("- Accuracy:"),
+print(accuracy.eval({x: mnist.test.images, y_: mnist.test.labels}))
