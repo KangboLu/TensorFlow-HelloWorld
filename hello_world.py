@@ -23,3 +23,7 @@ b = tf.Variable(tf.zeros([10]))
 
 # use built-in softmax regression in tf.nn: y = softmax(Wx + b)
 y = tf.nn.softmax(tf.matmul(x, W) + b)
+
+# define loss function with cross entropy input with label
+y_ = tf.placeholder(tf.float32, [None, 10])
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
