@@ -11,3 +11,8 @@ print(mnist.test.images.shape, mnist.test.labels.shape)
 print("- Validation data and label dimension:")
 print(mnist.validation.images.shape, mnist.validation.labels.shape)
 print
+
+# create tensorflow session
+import tensorflow as tf 
+sess = tf.InteractiveSession()
+x = tf.placeholder(tf.float32, [None, 784])
