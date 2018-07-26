@@ -16,3 +16,10 @@ print
 import tensorflow as tf 
 sess = tf.InteractiveSession()
 x = tf.placeholder(tf.float32, [None, 784])
+
+# initialize variables to zeros for softmax regression
+W = tf.Variable(tf.zeros([784, 10])) # 784 dim with 10 classes
+b = tf.Variable(tf.zeros([10]))
+
+# use built-in softmax regression in tf.nn: y = softmax(Wx + b)
+y = tf.nn.softmax(tf.matmul(x, W) + b)
