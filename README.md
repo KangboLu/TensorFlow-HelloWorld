@@ -1,6 +1,6 @@
 # TensorFlow-HelloWorld
 
-A TensorFlow Hello World Program with Softmax Regression
+A TensorFlow MNIST DL Example with Softmax Regression with no Hidden Layer
 
 # Steps taken
 
